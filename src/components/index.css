@@ -1,0 +1,72 @@
+
+    .card {
+        width: 275px;
+        border-radius: 20px;
+        box-shadow: 3px 3px 3px 1px #5e5e5e;
+    }
+
+    .cardInternal{
+        position: relative;
+    }
+
+    .imageHolder {
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .image {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .lower {
+        padding: 0 20px 20px 20px;
+        position: absolute;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .likeButton {
+        align-self: center;
+    }
+
+    .time {
+        vertical-align: top;
+        margin-left: 10px;
+    }
+
+    .highlighted{
+        color: yellow
+    }
+
+    .descSpan{
+        font-size: 16px
+    }
+
+    .dishName{
+        font-size: 20px;
+        font-weight: 700;
+        margin:10px 0 10px 0;
+    }
+
+    .blackBg{
+        background-color: black;
+        color: white;
+    }
+
+    .whiteBg{   
+        background-color: white;
+        color: black;
+    }
+
+    .category{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 0 20px;
+    }

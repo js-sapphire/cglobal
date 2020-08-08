@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Switch, Route} from 'react-router-dom';
+import { RecipeList } from "./components/RecipeList/RecipeList.jsx";
+import { RecipePage } from "./components/RecipePage/RecipePage.jsx";
+import { AppContext } from './AppContext';
+
+
+const AppContextProvider = (props) => {
+  const [selected, setSelected] = React.useState([]);
+  const { children } = props;
+
+  return(
+    <AppContext.Provider value={{ selected, setSelected}}>
+      {children}
+    </AppContext.Provider>
+  )
+
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContextProvider>
+      <Switch>
+        <Route path="/:id">
+          <RecipePage />
+        </Route>
+        <Route path="/">
+          <RecipeList />
+        </Route>
+      </Switch>
+    </AppContextProvider>
   );
 }
 
